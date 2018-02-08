@@ -1,20 +1,27 @@
-
-//-img = readpbm('Encelade_surface.pbm');
+//exec('readpbm.sci')
+img = readpbm('Encelade_surface.pbm');
 //gray = display_gray(img);
-//-min_gray=min(img);
+max_gray=max(img);
+
+//216
 colonne=512;
 ligne=384;
-nbr_ligne=1;
-nbr_colonne=1;
-array=[]
-n=1;
-for nbr_ligne=1:ligne
-    for nbr_colonne=1:colonne
-        array(n, 1)=nbr_colonne;
-        array(n, 2)=nbr_ligne;
-       n=n+1;
+
+
+for i=1:ligne
+    for j=1:colonne
+        
+        if img(j,i) > 200
+            
+            img(j,i)=255;
+            
+        else 
+            img(j,i)=0;
+            
+        end
+
    
     end
  
 end
- disp(array)
+//disp(array)
